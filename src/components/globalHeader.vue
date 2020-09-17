@@ -1,6 +1,14 @@
 <template>
   <div class="gHeader">
-    <el-button type="primary" size="mini" icon="el-icon-menu"></el-button>
+    <div class="breadCrumb">
+      <el-button type="primary" size="mini" icon="el-icon-menu"></el-button>
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item>视频管理页</el-breadcrumb-item>
+        <el-breadcrumb-item>用户管理</el-breadcrumb-item>
+        <el-breadcrumb-item>其他</el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
     <el-dropdown trigger="click" class="userPic">
       <span class="el-dropdown-link">该处放个人头像</span>
       <el-dropdown-menu slot="dropdown">
@@ -50,5 +58,10 @@ export default {
 .el-button {
   height: 40px;
   width: 40px;
+  margin-right: 10px;
+}
+.breadCrumb {
+  display: flex;
+  align-items: center;
 }
 </style>
